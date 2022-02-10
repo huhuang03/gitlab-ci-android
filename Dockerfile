@@ -1,9 +1,9 @@
 FROM ubuntu:20.04
-MAINTAINER Jan Grewe <jan@faked.org>
+MAINTAINER Wenfan Hu <wenfan.hu@infaith.com.cn>
 
-ENV VERSION_TOOLS "7583922"
+ENV VERSION_TOOLS "8092744"
 
-ENV ANDROID_SDK_ROOT "/sdk"
+ENV ANDROID_SDK_ROOT "/opt/android-sdk"
 # Keep alias for compatibility
 ENV ANDROID_HOME "${ANDROID_SDK_ROOT}"
 ENV PATH "$PATH:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/platform-tools"
