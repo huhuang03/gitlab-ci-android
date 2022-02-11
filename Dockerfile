@@ -45,5 +45,5 @@ RUN mkdir -p /root/.android \
  && touch /root/.android/repositories.cfg \
  && sdkmanager --update
 
-ADD packages.txt /sdk
-RUN sdkmanager --package_file=/sdk/packages.txt
+ADD packages.txt ${ANDROID_SDK_ROOT}
+RUN sdkmanager --package_file=${ANDROID_SDK_ROOT}/packages.txt
