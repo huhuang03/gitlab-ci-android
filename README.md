@@ -26,3 +26,6 @@ build:
     paths:
     - app/build/outputs/apk/app-debug.apk
 ```
+
+
+# test in local docker.
