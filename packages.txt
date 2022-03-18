@@ -8,3 +8,4 @@ extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2
 platforms;android-31
 platforms;android-32
 patcher;v4
+ndk;21.4.7075529
