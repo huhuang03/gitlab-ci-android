@@ -6,7 +6,7 @@ ENV VERSION_TOOLS "8092744"
 ENV ANDROID_SDK_ROOT "/opt/android-sdk"
 # Keep alias for compatibility
 ENV ANDROID_HOME "${ANDROID_SDK_ROOT}"
-ENV PATH "$PATH:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/platform-tools"
+ENV PATH "$PATH:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/platform-tools:${ANDROID_SDK_ROOT}/emulator"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update \
@@ -47,3 +47,8 @@ RUN mkdir -p /root/.android \
 
 ADD packages.txt ${ANDROID_SDK_ROOT}
 RUN sdkmanager --package_file=${ANDROID_SDK_ROOT}/packages.txt
+
+
+# create the emulator.
+RUN avdmanager --verbose create avd --force --name "avd_arm64" --device "pixel" --package "system-images;android-32;google_apis;arm64-v8a" --tag "google_apis" --abi "arm64-v8a"
+RUN avdmanager --verbose create avd --force --name "avd_x86_64" --device "pixel" --package "system-images;android-32;google_apis;x86_64" --tag "google_apis" --abi "x86_64"
