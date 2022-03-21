@@ -8,6 +8,3 @@ extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2
 platforms;android-31
 platforms;android-32
 ndk;21.4.7075529
-system-images;android-32;google_apis;x86_64
-system-images;android-32;google_apis;arm64-v8a
-emulator

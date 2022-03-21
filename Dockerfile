@@ -48,7 +48,13 @@ RUN mkdir -p /root/.android \
 ADD packages.txt ${ANDROID_SDK_ROOT}
 RUN sdkmanager --package_file=${ANDROID_SDK_ROOT}/packages.txt
 
+# some addition package.
+RUN sdkmanager "emulator"
+RUN sdkmanager "system-images;android-32;google_apis;x86_64"
+RUN sdkmanager "system-images;android-32;google_apis;arm64-v8a"
+
+
 
 # create the emulator.
-RUN avdmanager --verbose create avd --force --name "avd_arm64" --device "pixel" --package "system-images;android-32;google_apis;arm64-v8a" --tag "google_apis" --abi "arm64-v8a"
-RUN avdmanager --verbose create avd --force --name "avd_x86_64" --device "pixel" --package "system-images;android-32;google_apis;x86_64" --tag "google_apis" --abi "x86_64"
+# RUN avdmanager --verbose create avd --force --name "avd_arm64" --device "pixel" --package "system-images;android-32;google_apis;arm64-v8a" --tag "google_apis" --abi "arm64-v8a"
+# RUN avdmanager --verbose create avd --force --name "avd_x86_64" --device "pixel" --package "system-images;android-32;google_apis;x86_64" --tag "google_apis" --abi "x86_64"
