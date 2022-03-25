@@ -49,9 +49,9 @@ ADD packages.txt ${ANDROID_SDK_ROOT}
 RUN sdkmanager --package_file=${ANDROID_SDK_ROOT}/packages.txt
 
 # some addition package.
-RUN sdkmanager "emulator"
-RUN sdkmanager "system-images;android-32;google_apis;x86_64"
-RUN sdkmanager "system-images;android-32;google_apis;arm64-v8a"
+# RUN sdkmanager "emulator"
+# RUN sdkmanager "system-images;android-32;google_apis;x86_64"
+# RUN sdkmanager "system-images;android-32;google_apis;arm64-v8a"
 
 
 
